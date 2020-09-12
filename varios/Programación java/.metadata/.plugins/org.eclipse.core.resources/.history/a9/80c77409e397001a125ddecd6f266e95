@@ -1,0 +1,128 @@
+package interfaz;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+
+public class PanelOpciones extends JPanel implements ActionListener
+{
+	
+	//Constantes
+	
+	/**
+	 * Acción para cargar FASTA
+	 */
+	public final static String CARGAR = "CARGAR";
+	
+	/**
+	 * Acción para generar alineamiento
+	 */
+	public final static String ALINEAMIENTO = "ALINEAMIENTO";
+	
+	/**
+	 * Acción para crear reporte
+	 */
+	public final static String REPORTE = "REPORTE";
+	
+	/**
+	 * Acción para la extensión funcional 1
+	 */
+	public final static String OPCION_1 = "OPCION_1";
+	
+	/**
+	 * Acción para la extensión funcional 2
+	 */
+	public final static String OPCION_2 = "OPCION_2";
+			
+	//Atributos
+	/**
+	 * Botón para cargar el archivo de texto de las secuencias en formato FASTA
+	 */
+	private JButton btnCargar;
+	
+	/**
+	 *Botón para generar el alineamiento de las secuencias
+	 */
+	private JButton btnAlinear;
+	
+	/**
+	 * Botón para crear reporte del alineamiento
+	 */
+	private JButton btnCrearReporte;
+	
+	/**
+	 * Botón para la opción adicional 1
+	 */
+	private JButton btnOpcion1;
+	
+	/**
+	 * Botón para la opción adicional 2
+	 */
+	private JButton btnOpcion2;
+	
+	/**
+	 * Atributo de la interfaz principal
+	 */
+	private InterfazPrincipalAlineamientos principal;
+	
+	//Constructor
+	
+	public PanelOpciones(InterfazPrincipalAlineamientos pInterfazPrincipal)
+	{
+		setLayout(new GridLayout(1, 5));
+		setBorder(new TitledBorder("Opciones"));
+		
+		principal = pInterfazPrincipal;
+		//Botones
+		
+		//Cargar
+		btnCargar = new JButton("Cargar");
+		btnCargar.setVisible(true);
+		btnCargar.addActionListener(this);
+		btnCargar.setActionCommand(CARGAR);
+		add(btnCargar);
+		
+		//Alinear
+		btnAlinear = new JButton("Alinear");
+		btnAlinear.setVisible(true);
+		btnAlinear.addActionListener(this);
+		btnAlinear.setActionCommand(ALINEAMIENTO);
+		add(btnAlinear);
+		
+		//Crear Reporte
+		btnCrearReporte = new JButton("Crear reporte");
+		btnCrearReporte.setVisible(true);
+		btnCrearReporte.addActionListener(this);
+		btnCrearReporte.setActionCommand(REPORTE);
+		add(btnCrearReporte);
+		
+		//Opción1
+		btnOpcion1 = new JButton("Opción 1");
+		btnOpcion1.setVisible(true);
+		btnOpcion1.addActionListener(this);
+		btnOpcion1.setActionCommand(OPCION_1);
+		add(btnOpcion1);
+		
+		//Opción 2
+		btnOpcion2 = new JButton("Opción 2");
+		btnOpcion2.setVisible(true);
+		btnOpcion2.addActionListener(this);
+		btnOpcion2.setActionCommand(OPCION_2);
+		add(btnOpcion2);
+		
+	}
+	
+	public void actionPerformed(ActionEvent evento)
+	{
+		String comando = evento.getActionCommand();
+		if(comando.equals(CARGAR)){
+			principal.cargarArchivoSecuencias();
+		}
+	}
+
+
+}

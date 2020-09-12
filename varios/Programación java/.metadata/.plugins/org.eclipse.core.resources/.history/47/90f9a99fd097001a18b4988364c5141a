@@ -1,0 +1,19 @@
+package interfaz;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class PanelPuntajes extends JPanel
+{
+	
+	//Atributos
+	
+	
+	
+	//Constructor
+	
+	
+	
+	
+	//Métodos
+}

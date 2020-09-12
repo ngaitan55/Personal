@@ -1,0 +1,168 @@
+package uniandes.cupi2.cupiExperimentos.mundo;
+
+public class Experimento 
+{
+
+	// -----------------------------------------------------------------
+	// Atributos
+	// -----------------------------------------------------------------
+
+	/**
+	 * Nombre del medicamento en el experimento.
+	 */
+	private String nombre;
+
+	/**
+	 * Area infectada inicialmente.
+	 */
+	//TODO Parte 1 Punto A: Declarar el atributo del area infectada inicialmente
+	private double areaInicial;
+	
+	
+	/**
+	 * Area infectada. 
+	 */
+	private double areaInfectada;
+
+	/**
+	 * Cantidad de medicamento aplicado (mg)
+	 */
+	//TODO Parte 1 Punto B: Declarar el atributo del medicamento aplicado (numero entero)
+	private int medicamento;
+	
+	
+
+	// -----------------------------------------------------------------
+	// Metodos
+	// -----------------------------------------------------------------
+
+	/**
+	 * Crea un nuevo experimento.<br>
+	 * <b>post: </b> Se inicializo el nombre del medicamento con el valor dado como parametro
+	 * 				 El area inicial y el area infectada se inicializaron en 2
+	 * 				 La cantidad de medicamento se inicializa en 1 mg
+	 * @param pNombre Nombre del medicamento utilizado . pNombre != null && pNombre!=""
+	 */
+	public Experimento(String pNombre)
+	{
+		//TODO Parte 1 Punto C: Completar el constructor segun la documentacion.
+		//					  El nombre se inicializa con el valor dado como parametro
+		//					  El area infectada y el area inicial son inicialiadas en 2
+		//					  El medicamento aplicado se inicializa en 1
+		areaInicial = 2;
+		areaInfectada = 2;
+		medicamento = 1;
+		
+	}
+
+	/**
+	 * Devuelve el nombre del medicamento aplicado
+	 * @return nombre
+	 */
+	public String darNombre( )
+	{
+		return nombre;
+	}
+
+
+	/**
+	 * Devuelve el area inicial del experimento
+	 * @return areaInicial
+	 */
+	public double darAreaInicial( )
+	{
+		//TODO Parte 1 Punto D: Implemente el metodo segun la documentacion
+		return areaInicial;
+		
+	}
+
+	/**
+	 * Devuelve el area infectada
+	 * @return areaInfectada
+	 */
+	public double darAreaInfectada( )
+	{
+		return areaInfectada;
+	}
+
+	/**
+	 * Devuelve el total de medicamento aplicado
+	 * @return medicamento 
+	 */
+	public int darMedicamento( )
+	{
+		//TODO Parte 1 Punto E: Implemente el metodo segun la documentacion
+		return medicamento;
+		
+	}
+
+
+	/**
+	 * Metodo que devuelve el porcentaje de reduccion del area infectada
+	 * @return porcentaje de reduccion
+	 */
+	public double darPorcentajeReduccion()
+	{
+		double porcentaje=0.0;
+
+		porcentaje= ((areaInicial-areaInfectada)/areaInicial)*100;
+
+		return porcentaje;
+	}
+
+	/**
+	 * Metodo que devuelve la eficiencia del medicamento
+	 * @return eficiencia del medicamento
+	 */
+	public double darEficiencia()
+	{
+		//TODO Parte 1 Punto F: Implemente el metodo segun la documentacion y la descripcion del problema
+		
+		double eficiencia = ((areaInicial-areaInfectada)/medicamento);
+		return eficiencia;
+		
+	}
+
+	/**
+	 * Registra aplicacion de medicamento <br>
+	 * <b>post: </b> Se incrementaron el medicamento con el valor dado por parametro.
+	 * @param pCantMedicamento Cantidad de medicamento aplicado. pCantMedicamento > 0.
+	 */
+	public void registrarMedicamento( int pCantMedicamento )
+	{
+		//TODO Parte 1 Punto G: Implemente el metodo segun la documentacion
+		medicamento = pCantMedicamento;
+		medicamento = pCantMedicamento + 1;
+		
+		
+	}
+	
+	public void registrarUnidadMedicamento ()
+	{
+		medicamento = medicamento + 1;
+	}
+
+	/**
+	 * Registra el area infectada actual <br>
+	 * <b>post: </b> El valor del area infectada se actualiza por el valor dado como parametro
+	 * @param pArea Valor actual del area infectada. pArea > 0.
+	 */
+	public void actualizarArea( double pArea )
+	{
+		//TODO Parte 1 Punto H: Implemente el metodo segun la documentacion
+		areaInfectada = pArea;
+		
+		
+	}
+
+	/**
+	 * Reinicia los resultados registrados del experimento. 
+	 * <b>post: </b> areaInfectada es igual a area Inicial y medicamento es igual a uno
+	 */
+	public void reiniciar( )
+	{
+		areaInfectada = areaInicial;
+		medicamento = 1;
+	}
+
+}

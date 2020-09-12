@@ -1,0 +1,256 @@
+package interfaz;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.io.File;
+import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import mundo.Alineamiento;
+
+public class InterfazPrincipalAlineamientos extends JFrame
+{
+
+	//Atributos
+	private Alineamiento mundoAlineamientos;
+	
+	/**
+	 * Panel imagen
+	 */
+	private PanelImagen panelImagen;
+	
+	/**
+	 * Panel puntajes
+	 */
+	private PanelPuntajes panelPuntajes;
+	
+	/**
+	 * Panel opciones
+	 */
+	private PanelOpciones panelOpciones;
+	
+	/**
+	 * Panel matriz
+	 */
+	private PanelMatriz panelMatriz;
+	
+	//Constructor
+	public InterfazPrincipalAlineamientos()
+	{
+		
+		setSize(700, 400);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setTitle("Alineamientos");
+		
+		int matchInicial = 1;
+		int mismatchInicial = -1;
+		int gapInicial = -2;
+		mundoAlineamientos = new Alineamiento(matchInicial, mismatchInicial, gapInicial);
+		setLayout(new BorderLayout());
+		
+		JPanel panelInformacion = new JPanel(new BorderLayout());
+		add(panelInformacion, BorderLayout.CENTER);
+		//Panel imagen
+		panelImagen = new PanelImagen();
+		panelInformacion.add(panelImagen, BorderLayout.NORTH);
+		panelImagen.setPreferredSize(new Dimension(700, 100));
+		//Panel matriz
+		panelMatriz = new PanelMatriz(this);
+		panelInformacion.add(panelMatriz, BorderLayout.CENTER);
+		
+		JPanel botones = new JPanel(new BorderLayout());
+		add(botones, BorderLayout.SOUTH);
+		//Panel puntajes
+		panelPuntajes = new PanelPuntajes(this);
+		botones.add(panelPuntajes, BorderLayout.CENTER);
+		
+		//Panel Opciones
+		panelOpciones = new PanelOpciones(this);
+		botones.add(panelOpciones, BorderLayout.SOUTH);
+		
+		
+	}
+	
+	//Métodos
+	
+	/**
+	 * Método que permite ingresar el puntaje match como parámetro
+	 */
+	public void modificarPuntajeMatch(int pMatch)
+	{
+		mundoAlineamientos.modificarMatch(pMatch);
+	}
+	
+	/**
+	 * Método que permite ingresar el puntaje mismatch como parámetro
+	 */
+	public void modificarPuntajeMismatch(int pMismatch)
+	{
+		mundoAlineamientos.modificarMismatch(pMismatch);
+	}
+	
+	/**
+	 * Método que permite ingresar el puntaje gap como parámetro
+	 */
+	public void modificarPuntajeGap(int pGap)
+	{
+		mundoAlineamientos.modificarGap(pGap);
+	}
+	/**
+	 * Método para recuperar el número de filas para la matriz mostrada al usuario
+	 * @return filas
+	 */
+	public int darFilasMatrizInterfaz()
+	{
+		return mundoAlineamientos.darSecuencia1().darLongitudSecuencia() + 2;
+	}
+	
+	/**
+	 * Método para recuperar el número de columnas para la matriz mostrada al usuario
+	 * @return columnas
+	 */
+	public int darColumnasMatrizInterfaz()
+	{
+		return mundoAlineamientos.darSecuencia2().darLongitudSecuencia() + 2;
+	}
+	
+	/**
+	 * Método para recuperar la matriz de puntajes
+	 * @return matrizPuntajes
+	 */
+	public int[][] darMatrizPuntajes()
+	{
+		return mundoAlineamientos.darMatrizPuntajes();
+	}
+	
+	/**
+	 *  Método para recuperar la secuencia 1 
+	 *  @return secuencia de bases 1
+	 */
+	public String darSecuencia1()
+	{
+		return mundoAlineamientos.darSecuencia1().darSecuenciaBases();
+	}
+	
+	/**
+	 *  Método para recuperar la secuencia 2
+	 *  @return secuencia de bases 2
+	 */
+	public String darSecuencia2()
+	{
+		return mundoAlineamientos.darSecuencia2().darSecuenciaBases();
+	}
+	
+	/**
+	 * Método para generar la matriz  en el panel matriz
+	 */
+	public void generarMatrizPanel()
+	{
+		panelMatriz.generarMatriz();
+	}
+	/**
+	 * Permite cargar el archivo en formato FASTA de las secuencias
+	 */
+	public void cargarArchivoSecuencias()
+	{
+		
+		mundoAlineamientos.remover();
+		File archivo = null;
+		JFileChooser buscador = new JFileChooser("data");
+		buscador.setDialogTitle("Escoja el archivo FASTA");
+		buscador.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		buscador.setVisible(true);
+		int resultado = buscador.showOpenDialog(this);
+		if(resultado == JFileChooser.APPROVE_OPTION){
+			try{
+				archivo = buscador.getSelectedFile();
+				mundoAlineamientos.leerArchivo(archivo);
+			}catch(Exception excepcion){
+				JOptionPane.showMessageDialog(this, "Error al cargar el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		if(mundoAlineamientos.darSecuencia1()!=null){
+			generarMatrizPanel();
+		}else{
+			JOptionPane.showMessageDialog(this, "No se pudo generar la matriz", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+		
+		
+	}
+	
+	/**
+	 * Permite la generación del alineamiento
+	 */
+	public void generarAlineamiento()
+	{
+		String[] pAlineamiento = null;
+		if(mundoAlineamientos.darSecuencia1() != null){
+			mundoAlineamientos.calcularPuntajes();
+			String alineamientoBruto = mundoAlineamientos.darMejorAlineamiento();
+			String[] alineamiento = alineamientoBruto.split(",");
+			String mensajeAlineamiento = alineamiento[0] +  "\n" + alineamiento[1];
+			pAlineamiento = alineamiento;
+			JOptionPane.showMessageDialog(this, mensajeAlineamiento, "El mejor alineamiento es:", JOptionPane.INFORMATION_MESSAGE);	
+		}else{
+			JOptionPane.showMessageDialog(this, "Por favor, cargue el archivo FASTA", "Error de archivo", JOptionPane.ERROR_MESSAGE);
+		}
+		panelMatriz.llenarPuntajesMatriz();
+		if(pAlineamiento != null){
+			panelMatriz.marcarAlineamiento(pAlineamiento);
+		}
+		
+	}
+	
+	/**
+	 * Permite la creación de un archivo .txt con los mejores alineamientos
+	 */
+	public void crearReporte()
+	{
+		if(mundoAlineamientos.darSecuencia1() != null){
+			try{
+				mundoAlineamientos.guardarMejorAlineamiento();
+				JOptionPane.showMessageDialog(this, "El reporte del mejor alineamiento fue creado en /data/alineamiento.txt", "Generación de reporte", JOptionPane.INFORMATION_MESSAGE);
+			}catch(Exception excepcion){
+				JOptionPane.showMessageDialog(this, "Hubo un error en la creación del archivo", "Error al crear el reporte", JOptionPane.ERROR_MESSAGE);
+			}
+		}else{
+			JOptionPane.showMessageDialog(this, "Por favor, cargue el archivo FASTA", "Error de archivo", JOptionPane.ERROR_MESSAGE);
+		}
+		
+	}
+	
+	/**
+	 * Método de funcionalidad opcional 1
+	 */
+	public void reqFuncional1()
+	{
+		String respuesta = mundoAlineamientos.metodo1();
+		JOptionPane.showMessageDialog(this, respuesta, "Método 1", JOptionPane.PLAIN_MESSAGE);	
+	}
+	
+	/**
+	 * Método de funcionalidad opcional 2
+	 */
+	public void reqFuncional2()
+	{
+		String respuesta =  mundoAlineamientos.metodo2();
+		JOptionPane.showMessageDialog(this, respuesta, "Método 2", JOptionPane.PLAIN_MESSAGE);
+	}
+	
+	//Método main
+	/**
+	 * Método main, máquina virtual del programa
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		InterfazPrincipalAlineamientos principal = new InterfazPrincipalAlineamientos();
+		principal.setVisible(true);
+	}
+
+}

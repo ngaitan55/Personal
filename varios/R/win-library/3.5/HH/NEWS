@@ -1,0 +1,756 @@
+Version 3.1-35
+--------------
+
+* 2018 Jun 02
+
+* change R/HH-Package.Rd to use Rd macro references
+
+* scripts/hh2/dsgn.R Revised new material following chunk 6 to use
+  latex() from microplot_1.0-38
+
+* changed \link[package]{function} to
+  \link[package:manfilename]{function} in .Rd files as needed for
+  Windows installation.
+
+
+Version 3.1-34
+--------------
+
+* 2017 Jan 18
+
+* CITATION package="HH" reference switched to https
+
+* on CRAN 2017-01-18
+
+
+Version 3.1-33
+--------------
+
+* 2017 Jan 13
+
+* additional recommended packages listed in scripts/hh2/RApx.R chunk 2
+
+* new repos in scripts/hh2/RExcelApx.R chunk 2
+
+* plot.likert.formula now honors the reference.line.col argument and the border argument.
+
+* CIplot and shiny.CIplot added to illustrate the meaning of confidence levels.
+
+* put keyword shiny in all relevant Rd files and put all shiny apps into examples in those files and in HH.package.Rd
+
+* regr2.plot now returns the transformation constructed internally by persp
+
+* new demo regr2 on the geometry of regression coefficients, based on the revised regr2.plot
+
+* panel.bwplot.intermediate.hh now honors the lwd argument
+
+* NTplot added additional shiny font-size controls
+
+* NTplot now has a Black and White color scheme ntcolors="BW"
+
+
+Version 3.1-32
+--------------
+
+* 2016 May 23
+
+* repair rounding in wrong place in print.NormalAndTplot
+
+* use new microplot package for improved display of HH2 Figure 13.2 in
+  file scripts/hh2/dsgn.R, chunk 6
+
+* on CRAN 2016-06-23
+
+* HH now suggests the microplot package
+
+
+
+Version 3.1-31
+--------------
+
+* 2016 Apr 10
+
+* remove sorted argument from objip to achieve backwards compatibility.
+
+* on CRAN 2016-04-11
+
+
+
+Version 3.1-30
+--------------
+
+* 2016 Apr 04
+
+* shiny apps AEdotplot and likert have even better behavior.
+
+* submit to CRAN 2016-04-05
+
+
+
+Version 3.1-29
+--------------
+
+* 2016 Apr 01
+
+* objip now takes mode and class arguments (sorted argument doesn't work in R < 3.2.0)
+
+* shiny apps AEdotplot and likert have better behavior.
+
+* private distribution 2016-04-01
+
+
+
+Version 3.1-28
+--------------
+
+* 2016 Mar 23
+
+* Imports: shiny (>= 0.13.1)
+
+* px.height as a UI input for these shiny apps:
+  AEdotplot, likert, PopulationPyramid, NTplot
+
+* remove references to setInternet2
+
+* private distribution 2016-03-28
+
+
+Version 3.1-27
+--------------
+
+* 2016 Mar 22
+
+* New shiny app for likert.
+
+* private distribution 2016-03-22
+
+
+Version 3.1-26
+--------------
+
+* 2016 Mar 21
+
+* Depends: gridExtra (>= 2.0.0)
+
+* New subdirectory and file inst/shiny/NTplot/app.R, and added library() statements to
+  the bivariateNormalScatterplot and bivariateNormal apps.
+
+* NTplot as a shiny app, NTplot(shiny=TRUE, px.height=575), now has a new pixel-height
+  argument for short browsers.
+
+* AEdotplot: the Adverse Events can now be sorted by several variables
+  in addition to Relative Risk.
+
+* New shiny app for AEdotplot.
+
+* private distribution 2016-03-21
+
+
+Version 3.1-25
+
+* 2016 Feb 03
+
+* change getLikertDataLong to use value.var= instead of value= for
+  dcast, to avoid unnecessary warning
+
+* add ability of mmcplot.glht to recognize non-NULL mmc$focus
+
+* add additional labeling control to mmcisomeans and panel.confintMMC
+
+* add additional control of par.strip.text for AEdotplot objects
+
+* On CRAN 2016-02-03
+
+
+Version 3.1-24
+--------------
+
+* 2015 Dec 15
+
+* NormalAndTplot.default: removed test for is.na(main) to avoid warning.
+
+* More script adjustments to match the production set of proofs for the Second Edition
+  of Statistical Analysis and Data Display.
+
+* Make HH dependent on Rmpfr_0.6-0 which now includes formatBin and formatHex.
+  Therefore remove the older versions of formatBin and formatHex from HH.
+
+* On CRAN 2015-12-15
+
+
+Version 3.1-23
+--------------
+
+* 2015 Nov 08
+
+* lmplot gains the ylim argument
+
+* print.latticeresids now has position, panel.width, and which arguments
+
+* plot.case tightened up.  The resulting trellis object now has class
+  "trellis.case" in addition to "trellis".  Noteworthy cases are now
+  automatically displayed with their own print method on the Console
+  as well as on the graph.
+
+* remove defunct inst/shiny/NormalAndTplot/.
+  It's function is now handled by NTplot(shiny=TRUE)
+
+* copy scripts/hh2/*.R from the manuscript after correcting page proofs
+
+* on CRAN 2015-11-08
+
+
+
+Version 3.1-22
+--------------
+
+* 2015 Oct 21
+
+* extend ntcolors argument to vector of colornames in NTplot
+
+* ancovaplot argument col.line is recycled to the number of panels
+  in the plot
+
+* update HH2 scripts to match changes made while reading page proofs
+  of HH2
+
+* repair HH version formatBin to get padding digits right and formatDec
+  to honor nsmall
+
+* give lmplot a main= argument, and force layout=c(2,1) on diagplot5new
+
+* distributed to class 8121.f15 on 2015-10-21
+
+
+Version 3.1-21
+--------------
+
+* 2015 Aug 23
+
+* add to DESCRIPTION and NAMESPACE for stats, grDevices
+
+* on CRAN 2015-08-23
+
+
+Version 3.1-20
+--------------
+
+* 2015 Aug 18
+
+* revise print.NTplot to match revised grid.table in gridExtra_2.0-0
+
+* redesign showBin and showHex to use Rmpfr::getPrec() for precision,
+  add showDec
+
+* add wrapper functions formatDec formatHex formatBin to use
+  Rmpfr::format*
+  functions if they exist and to use HH::show* functions otherwise.
+
+* add line to DESCRIPTION: Depends: graphics
+
+* add line to NAMESPACE: import(graphics)
+
+* repair pch bug in ancova
+
+
+Version 3.1-19
+--------------
+
+* 2015 Jun 10
+
+* rename functions to showBin and showHex, instead of as.bin and as.hex
+
+* on CRAN 2015 Jun 12
+
+
+Version 3.1-18
+--------------
+
+* 2015 Jun 05
+
+* demo(book.plots) removed.
+
+* add optional ylab argument to F.setup and chisq.setup.
+
+* minor fixes to make all book examples work smoothly
+
+* repair pch in ancova() function
+
+
+Version 3.1-17
+--------------
+
+* 2015 May 25
+
+* simplify help("interaction2wt") to pure R by removing S-Plus options.
+
+* Add new as.hex and as.bin and related functions.  These build on mpfr.
+
+* NTplot didn't always work when mean1=NA.  Now repaired.
+
+* posted development version to my website because it is ok with
+  R-3.1.2 but not with R-3.2.0 or later.
+
+
+Version 3.1-16
+--------------
+
+* 2015 March 23
+
+* Add noop versions of hhpng and hhlatex
+  (needed for HH2 script files)
+
+* panel.bwplot.intermediate.hh: make pch a vector if it isn't,
+  on.exit() instead of manual recovery of trellis.par parameters.
+
+* adjust residual.plots.lattice scaling.
+
+* hovBF and hovplotBF: add argument na.rm=TRUE
+
+* post on my website for use by invitation
+
+
+
+Version 3.1-15
+--------------
+
+* 2015 February 12
+
+* prettier y-axes for NTplot(power=TRUE, beta=TRUE, ...)
+
+* change shiny n-slider for NTplot to new max=150
+
+* put main label for NTplot(shiny=TRUE) under program control
+
+* change pixel height of shiny plot from 800px to 600px in NTplot
+
+* rearrange shiny controls in NTplot
+
+* revise ?MMC to remove all references to S-Plus
+
+* improve error message in mmcplot when lmat is missing.
+
+* adjust behind-the-scenes parameters in NTplot methods
+
+* new function reorder.trellis
+
+* redesign rbind.trellis, cbind.trellis, transpose.trellis to cover more cases.
+
+* add new right.text.cex argument to panel.confintMMC
+
+* add runApp(system.file(package="HH", "shiny/PopulationPyramid"))
+
+* changes to panel.intxplot and panel.interaction2wt so they now honor the lattice argument type.
+
+* adjust CITATION, it no longer needs packageDescription
+
+* remove HH:::t.trellis and HH:::units.ts. These were needed for S-Plus compatibility only.
+
+* remove no-longer valid URL from \url{}.  keep it as text.
+
+* register as.numeric.positioned as S3 method
+
+* add and emphasize mmc(focus="A") example to ?mmc
+
+* Published on CRAN 2015 February 16
+
+
+Version 3.1-14
+--------------
+
+* 2015 January 8
+
+* fix typos
+
+* check with today's R-devel
+
+* published on CRAN 2015-01-09
+
+
+
+Version 3.1-13
+--------------
+
+* 2015 January 7
+
+* change many radioButtons to checkboxGroupInput in
+  NTplot(shiny=TRUE, ...)
+
+* NTplot(power=TRUE, beta=TRUE, ...) ## improved syntax for
+  power and beta curves
+
+* more items in demo(NTplot)
+
+* post on my website for use by invitation
+
+
+Version 3.1-12
+--------------
+
+* 2015 January 4
+
+* add new right.text.cex argument to likert.formula
+
+* rename the generic to NTplot from NormalAndT
+
+* add not-yet functioning NTplot method for power.prop.test and for
+  normalApproxBinomial with two samples.
+
+* post on my website for use by invitation
+
+
+Version 3.1-11
+--------------
+
+* 2014 December 29
+
+* additional tuning arguments to internal functions in NormalAndT
+
+* added normal approximation to binomial to the NormalAndT functions, including shiny app
+
+* post on my website for use by invitation
+
+
+Version 3.1-10
+--------------
+
+* 2014 December 23
+
+* change argument name in NormalAndTplot from sd to stderr.
+
+* document NormalAndT
+
+* post on my website for use by invitation
+
+
+Version 3.1-9
+-------------
+
+* 2014 December 22
+
+* Construct a generic function shiny.NormalAndTplot for shiny calls to
+  NormalAndTplot, and then write a newer wrapper NormalAndT with
+  argument shiny=FALSE for standard graphics device and shiny=TRUE for
+  shiny interaction.  Methods include htest, NormalAndTplot,
+  power.htest, and default (a list of values).
+
+
+Version 3.1-8
+-------------
+
+* 2014 December 14
+
+* rename normal.and.t to NormalAndTplot
+
+* improve shiny ui to NormalAndTplot by placing input controls into tabs
+
+* posted on CRAN 2014-12-17
+
+
+Version 3.1-7
+-------------
+
+* 2014 December 07
+
+* add power or beta curve to normal.and.t
+
+* add normal.and.t.htest
+
+
+Version 3.1-6
+-------------
+
+* 2014 November 28
+
+* put Confidence Intervals into normal.and.t
+
+* shiny apps for normal.and.t and for bivariateNormal Density
+  and bivariateNormalScatterplot
+
+* Add normal.and.t as a lattice-based replacement for normal.and.t.dist
+
+* add normal.and.t.table to the normal.and.t
+
+* add bivariateNormalnormal.and.t
+
+* Add Second edition HH to CITATION
+
+* repair bug in panel.ancova.superpose
+
+* adjust hh2 code for proofreading figures in draft copy of Second Edition of book.
+
+* add lwd and lty arguments to ci.plot
+
+* interaction2wt: change legend cex always and add separate legend for
+  points when simple=TRUE
+
+* update scripts/hh2/* to match revision of draft manuscript
+
+* add display=TRUE argument to WindowsPath
+
+* add chapternumbers=NULL default argument to HHscriptnames
+
+* change seqplot.default arguments to:
+     new arg: col.line="gray60",
+     new default: col=trellis.par.get("superpose.symbol")$col,
+     new default: lwd=1
+
+* remove all if.R() statements from scripts/hh2/tser.R
+
+* optional strip.left for acf.pacf.plot
+
+* position control for print.tsacfplots.  default to previous settings.
+
+* change single-item pch from "." to 16
+
+* remove all references to rts class (not in R, only in S-Plus)
+
+
+Version 3.1-5
+-------------
+
+* 2014 September 12
+
+* added grid to imports and made other changes needed by R-3.2.0
+  development version.
+
+* On CRAN 2014 September 13
+
+
+Version 3.1-4
+-------------
+
+* 2014 September 11
+
+* New function interval.glm for confidence and prediction intervals
+  for glm objects.
+
+* add odds and antiodds functions
+
+* new useOuterStripsT2L1 function, based on latticeExtra::useOuterStrips
+
+* \tabular{}{} in ancovaplot.Rd
+
+* add between= argument to ancovaplot
+
+* change mmc.Rd and other mmc help files to use mmcplot in the
+  examples instead of the older HH:::plot.mmc.multicomp
+
+* HHscriptnames now takes an edition argument
+
+
+Version 3.1-3
+-------------
+
+* 2014 July 18
+
+* move First Edition scripts from scripts/xxxx.R to scripts/hh1/xxxx.r
+  in parallel with scripts/hh2/xxxx.R for Second Edition scripts.
+
+* fix naming bug of reshape2::melt arguments in likert.formula
+
+* Limited release to colleague
+
+Version 3.1-2
+-------------
+
+* 2014 July 15
+
+* repair sequencing of ar:p,ma:q for two-digit p or q in tsdiagplot.
+
+* Limited release to colleague
+
+
+Version 3.1-1
+-------------
+
+* 2014 July 09
+
+* mmc.explain moved to an unexported function
+
+* Include mmcplot and related functions (lattice replacement
+  for plot.mmc.multicomp and plot.multicomp).
+
+* unrecommend plot.mmc.multicomp() and plot.multicomp() in favor of
+  mmcplot().  I am not deprecating them now.
+
+* new hov and OneWayVarPlot
+
+* new ancovaplot and related functions.
+
+* unrecommend ancova() in favor of aov() and ancovaplot().  I am not deprecating it now.
+
+* replace demo("ancova") based on the ancova() with newer version based on ancovaplot().
+
+* add new demo("appleAncova") with a response, covariate, treatment factor, and blocking factor.
+
+* merge matrixTrellis functions
+
+* merge regressionDiagnostics functions
+
+* merge dicreteUniform functions
+
+* copy HH second edition files to scripts/hh2
+
+* Limited release to colleague
+
+
+Version 3.1-0
+-------------
+
+* 2014 July 01
+
+* Start merging small packages written for the HH second edition
+  into the HH package
+
+* Include noop versions of hhpdf hhdev.off hhcapture hhcode
+  (needed for HH2 script files)
+
+* Modify mmc.default to include result$none$glht$focus and
+  result$lmat$glht$focus
+
+* freeze on 2014-07-03
+
+
+Version 3.0-5
+-------------
+
+* 2014 June 28
+
+* Adjust ylim in demo(ancova)
+
+* mmc (multicomp.reverse) warning() changed to cat().
+  This is informative and does not require user action.
+  It should appear at the place where the function is called.
+
+* data(R282.y) now used in HH2 instead of data(R282).  For the second
+  edition of HH, the dummy variables previously stored in R282 are now
+  generated in the code.
+
+* demo(betaWeightedAverage) added.
+
+* added  RcmdrPlugin.HH to Suggests:
+
+* corrected abline in plot.summaryHH.regsubsets
+
+* repair as.multicomp.glht to force height to be a vector.
+
+* repair mmc.default to allow estimate.sign to be honored by lmat,
+  and order.contrasts to be honored by lmat and none.
+
+* give as.multicomp.glht default values for focus and height arguments
+
+* ancova "main" argument handles label correctly now.
+
+* new argument "name.prefix" to functions ladder.f and ladder.fstar.
+
+* repair abind call in plotOddsRatio.base for R.
+  R requires the a= argument, S-Plus acted as if the default was a=0.
+
+* new plotOddsRatio function based on lattice.  New function returns a lattice object.
+  Old plotOddsRatio.base function returns OddsRatio(x, alpha[1]).
+
+* resave crime.rda with names(dimnames())
+
+* add jury.rda and oral.rda to data directory
+
+* new example to objip: {search(); objip()[2:3]}
+
+* freeze on 2014-07-01
+
+
+Version 3.0-4
+-------------
+
+* 2014 March 10
+
+* in likert, arguments xlimEqualLeftRight xTickLabelsPositive are now ignored
+  when both at and labels are explicitly specified.
+
+* the likert paper has been published in the Journal of Statistical Software.  See
+  ?likert for the reference.
+
+* published on CRAN 2014-03-11
+
+
+Version 3.0-3
+-------------
+
+* 2014 February 5
+
+* correct typo in plot.likert.formula
+
+* document formula restriction in man/likert.Rd
+
+* document placing x-axis labels on the top axis for horizontal likert plots
+
+* make changes to allow y-axis labels on the right axis for vertical
+  likert plots and document it.
+
+* restore old par.settings at the completion of
+  panel.bwplot.intermediate.hh, remove S-Plus features.
+
+* new argument width.cutoff in print.mmc.multicomp
+
+* AElogrelrisk previously depended on the dataset being sorted
+  order(PREF, RAND), but it wasn't documented.  logrelrisk had the
+  same dependence and it was documented, but not enforced by the
+  function.  Now both AElogrelrisk and logrelrisk do the ordering.
+  The user no longer needs to worry about sort order.
+
+* revised three demo files for better appearance of the plots.
+
+* new function panel.bwplot.superpose
+
+* published on CRAN 16-Feb-2014
+
+
+Version 3.0-2
+-------------
+
+* 2014 January 6
+
+* add position() to factors in cc176 dataset
+
+* remove data files in text form and in S-Plus form
+
+* fix typos in plot.multicomp.Rd mmc.Rd
+
+Still needed
+-------------
+
+* Still needed: stop requiring dimnames in as.MatrixList.array (?).
+
+* MMC rewritten in lattice: mmcplot, mmcmatch, mmcboth.
+  Currently in separate mmcplot package
+
+* HH2writing: hhpdf, hhdev.off, hhcapture need to be moved to HH as no-ops.
+  Stangle.HH not needed in HH.
+  Currently in separate HH2writing package
+
+* new panel.bwplot.intermediate
+
+* verify all scripts from First Edition
+
+
+Version 3.0-1
+-------------
+
+* 2014 January 6
+
+* direct copy of the unreleased HH_2.3-43
+
+* The HH package is now at version 3.x-y to support the Second Edition
+  of the HH book, Statistical Analysis and Data Display.  All examples
+  from the CRAN HH_2.3-42, and scripts supporting the First Edition, continue
+  to work.  New features are added.  The package is now supported only for R.
+  Not all S-Plus specific contructions have been removed.
+
+* ladder: no longer uses panel.cartesian.R and grid.axis.hh.R
+
+* likert.formula: changes in rightAxis to rowSums are now correct in each panel.
+
+* Fix up lots of .Rd files where the lines were too long, but not
+  detected by R CMD check.
+
+* Switch IMPORTS from reshape package to reshape2 package.

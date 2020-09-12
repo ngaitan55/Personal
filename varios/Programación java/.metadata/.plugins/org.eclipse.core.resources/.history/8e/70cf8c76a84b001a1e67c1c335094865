@@ -1,0 +1,251 @@
+package uniandes.cupi2.cupiExperimentos.mundo;
+
+
+
+public class CupiExperimentos 
+{
+	// -----------------------------------------------------------------
+	// Atributos
+	// -----------------------------------------------------------------
+
+	/**
+	 * Experimento numero 1.
+	 */
+	private Experimento experimento1;
+
+	/**
+	 * Experimento numero 2.
+	 */
+	//TODO Parte 2 Punto A: Declare el atributo para modelar el experimento 2
+	
+
+	/**
+	 * Experimento numero 3.
+	 */
+	private Experimento experimento3;
+
+	/**
+	 * Experimento numero 4.
+	 */
+	
+	//TODO Parte 2 Punto B: Declare el atributo para modelar el experimento 4
+	
+
+
+	// -----------------------------------------------------------------
+	// Metodos
+	// -----------------------------------------------------------------
+
+	/**
+	 * Crea e inicializa los exeperimentos a realizar. <br>
+	 * <b>post: </b> Se inicializaron los cuatro experimentos.
+	 */
+	public CupiExperimentos ( )
+	{
+		// Crea el experimento 1
+		experimento1 = new Experimento( "Medicamento X" );
+
+		//TODO Parte 2 Punto C: Llamar la constructora para crear el segundo experimento con nombre de medicamento: "Medicamento Y"
+		
+		
+		// Inicializa el experimento 3
+		experimento3 = new Experimento( "Medicamento Z" );
+
+		// Inicializa el experimento 4
+		
+		//TODO Parte 2 Punto D: Llamar la constructora para crear el segundo experimento con nombre de medicamento: "Medicamento W"
+		
+		
+	}
+
+	/**
+	 * Devuelve el experimento numero 1.
+	 * @return Experimento 1
+	 */
+	public Experimento darExperimento1( )
+	{
+		return experimento1;
+	}
+
+	/**
+	 * Devuelve el experimento numero 2.
+	 * @return Experimento 2
+	 */
+	public Experimento darExperimento2( )
+	{
+		//TODO Parte 2 Punto E: Implemente el metodo segun la documentacion
+		
+	}
+
+	/**
+	 * Devuelve el experimento numero 3.
+	 * @return Experimento 3
+	 */
+	public Experimento darExperimento3( )
+	{
+		return experimento3;
+	}
+
+	/**
+	 * Devuelve el experimento numero 4.
+	 * @return Experimento 4
+	 */
+	public Experimento darExperimento4( )
+	{
+		//TODO Parte 2 Punto F: Implemente el metodo segun la documentacion
+		
+	}
+
+	/**
+	 * Devuelve la cantidad total de medicamento aplicado por los 4 experimentos
+	 * @return total de medicamento aplicado en los 4 experimentos 
+	 */
+	public int darTotalMedicamento( )
+	{
+		//TODO Parte 2 Punto G: Implemente el metodo segun la documentacion
+		
+	}
+
+
+	/**
+	 * Devuelve la efeciencia promedio de los 4 experimentos
+	 * @return Eficiencia promedio por experimento
+	 */
+	public double darPromedioEficiencia( )
+	{
+		double promedio = 0;
+		double total = 0;
+		
+		total = total + experimento1.darEficiencia();
+		total = total + experimento2.darEficiencia();
+		total = total + experimento3.darEficiencia();
+		total = total + experimento4.darEficiencia();
+		
+		promedio=total/4;
+
+		return promedio;
+	}    
+
+	/**
+	 * Registra la aplicacion de medicamento para el experimento 1.<br>
+	 * <b>post: </b> Se registro el la aplicacion del medicamento 1.
+	 * @param pMedicamento. Cantidad de medicamento aplicado. pMedicamento > 0.
+	 */
+	public void registrarMedicamentoExperimento1( int pMedicamento )
+	{
+		experimento1.registrarMedicamento( pMedicamento );
+	}
+
+	/**
+	 * Registra medicamento para el experimento 2.<br>
+	 * <b>post: </b> Se registro el el medicamento 2.
+	 * @param pMedicamento Cantidad de medicamento aplicado. pMedicamento > 0.
+	 */
+	public void registrarMedicamentoExperimento2( int pMedicamento )
+	{
+		//TODO Parte 2 Punto H: Implemente el metodo segun la documentacion
+		
+	}
+
+	/**
+	 * Registra medicamento para el experimento 3.<br>
+	 * <b>post: </b> Se registro el el medicamento 3.
+	 * @param pMedicamento Cantidad de medicamento aplicado. pMedicamento > 0.
+	 */
+	public void registrarMedicamentoExperimento3( int pMedicamento )
+	{
+		experimento3.registrarMedicamento( pMedicamento );
+	}
+
+	/**
+	 * Registra medicamento para el experimento 4.<br>
+	 * <b>post: </b> Se registro el el medicamento 4.
+	 * @param pMedicamento Cantidad de medicamento aplicado. pMedicamento > 0.
+	 */
+	public void registrarMedicamentoExperimento4( int pMedicamento )
+	{
+		//TODO Parte 2 Punto I: Implemente el metodo segun la documentacion
+		
+	}
+
+	/**
+	 * Registra area infectada actual para el experimento 1<br>
+	 * <b>post: </b> Se registro el area infectada actual para el experimento 1
+	 * @param pArea- Area actual infectada. pArea > 0.
+	 */
+	public void actualizarAreaExperimento1( double pArea )
+	{
+		experimento1.actualizarArea( pArea );
+	}  
+
+	/**
+	 * Registra area infectada actual para el experimento 2<br>
+	 * <b>post: </b> Se registro el area infectada actual para el experimento 2
+	 * @param pArea Area actual infectada. pArea > 0.
+	 */
+	public void actualizarAreaExperimento2( double pArea )
+	{
+		//TODO Parte 2 Punto J: Implemente el metodo segun la documentacion
+		
+	}
+
+	/**
+	 * Registra area infectada actual para el experimento 3<br>
+	 * <b>post: </b> Se registro el area infectada actual para el experimento 3
+	 * @param pArea Area actual infectada. pArea > 0.
+	 */
+	public void actualizarAreaExperimento3( double pArea )
+	{
+		experimento3.actualizarArea( pArea );
+	}
+
+	/**
+	 * Registra area infectada actual para el experimento 4<br>
+	 * <b>post: </b> Se registro el area infectada actual para el experimento 4
+	 * @param pArea Area actual infectada. pArea > 0.
+	 */
+	public void actualizarAreaExperimento4( double pArea )
+	{
+		//TODO Parte 2 Punto K: Implemente el metodo segun la documentacion
+		
+	}
+
+	/**
+	 * Reinicia los cuatro experimentos
+	 * <b>post: </b> Se reinicio la informacion de los cuatro experimentos
+	 */
+	public void reiniciar( )
+	{
+
+		experimento1.reiniciar( );
+		
+		experimento3.reiniciar( );
+		
+		//TODO Parte 2 Punto L: Completar el metodo segun la documentacion
+		
+		
+	}
+
+	// -----------------------------------------------------------------
+	// Puntos de extension
+	// -----------------------------------------------------------------
+
+	/**
+	 * Metodo para la extension 1.
+	 * @return Respuesta1.
+	 */
+	public String metodo1( )
+	{
+		return "Respuesta 1";
+	}
+
+	/**
+	 * Metodo para la extension2.
+	 * @return Respuesta2.
+	 */
+	public String metodo2( )
+	{
+		return "Respuesta 2";
+	}
+
+}

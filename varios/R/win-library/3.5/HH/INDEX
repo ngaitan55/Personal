@@ -1,0 +1,260 @@
+AEdotplot               AE (Adverse Events) dotplot of incidence and
+                        relative risk
+AEdotplot.data.frame    AE (Adverse Events) dotplot of incidence and
+                        relative risk, support functions
+CIplot                  Illustration of the meaning of confidence
+                        levels.
+Discrete4               Discrete with four levels color dataset.
+F.curve                 plot a chisquare or a F-curve.
+GSremove                Remove selected GraphSheetPages in the S-Plus
+                        Windows GUI Graphsheet
+HH-defunct              Defunct Functions in Package 'HH'
+HH-package              Statistical Analysis and Data Display:
+                        Heiberger and Holland
+HH.regsubsets           Display tabular results for Best Subsets
+                        Regression.
+HHscriptnames           Find absolute pathname of a script file for the
+                        HH book in the HH package.
+LikertPercentCountColumns
+                        Display likert plots with percents in the first
+                        column of panels and counts in the second
+                        column of panels.
+NTplot                  Specify plots to illustrate Normal and t
+                        Hypothesis Tests or Confidence Intervals,
+                        including normal approximation to the binomial.
+NormalAndTPower         Construct a power graph based on the NTplot.
+NormalAndTplot          Specify plots to illustrate Normal and t
+                        Hypothesis Tests or Confidence Intervals.
+OddsRatio               Calculate or plot the odds ratio for a 2x2
+                        table of counts.
+OneWayVarPlot           Displays a three-panel 'bwplot' of the data by
+                        group, of the group means, and of the entire
+                        dataset.  This is an approximate visualization
+                        of the Mean Square lines from the ANOVA table
+                        for a one-way ANOVA model.
+ResizeEtc               Display multiple independent trellis objects on
+                        the same coordinated scale.
+ResizeEtc.likertPlot    Display multiple independent trellis objects,
+                        representing likert plots, on the same
+                        coordinated scale.
+X.residuals             Residuals from the regression of each column of
+                        a data.frame against all the other columns.
+ae.dotplot              AE (Adverse Events) dotplot of incidence and
+                        relative risk
+ancova                  Compute and plot oneway analysis of covariance
+ancova-class            Class "ancova" Analysis of Covariance
+ancovaplot              Analysis of Covariance Plots
+anova.ancovaplot        ANOVA table for a c("ancovaplot","trellis")
+                        object.
+anovaMean               ANOVA table from the group sample sizes, means,
+                        and standard deviations.
+aovSufficient           Analysis of variance from sufficient statistics
+                        for groups.
+arima.diag.hh           Repair design error in S-Plus arima.diag
+arma.loop               Loop through a series of ARIMA models and
+                        display coordinated tables and diagnoastic
+                        graphs.
+as.likert               Support functions for diverging stacked
+                        barcharts for Likert, semantic differential,
+                        and rating scale data.
+as.matrix.listOfNamedMatrices
+                        Convert a list of matrices to a single matrix
+as.multicomp            Support functions in R for MMC (mean-mean
+                        multiple comparisons) plots.
+as.rts                  Miscellaneous functions that I wish were in or
+                        consistent between S-Plus and R.
+as.vector.trellis       Convert a two-dimensional trellis object into a
+                        one-dimensional trellis object. Change the
+                        order of panels in a trellis object.
+axis.i2wt               specialized axis function for interaction2wt.
+bivariateNormal         Plot the bivariate normal density using
+                        wireframe for specified rho.
+case                    case statistics for regression analysis
+ci.plot                 Plot confidence and prediction intervals for
+                        simple linear regression
+col.hh                  Initializing Trellis Displays
+col3x2                  col3x2 color dataset
+combineLimits.trellisvector
+                        Combine limits on a one-dimensional trellis
+                        object.
+cp.calc                 Rearranges and improves the legibility of the
+                        output from the stepwise function in S-Plus.
+cplx                    Generate a sequence spanning the xlim of a
+                        lattice window.
+datasets                Datasets for Statistical Analysis and Data
+                        Display, Heiberger and Holland
+dchisq.intermediate     Intermediate f and chisq functions to simplify
+                        writing for both R and S-Plus.
+diag.maybe.null         Returns a value for the diagonal of NA and NULL
+                        arguments.
+diagQQ                  QQ plot of regression residuals.
+diagplot5new            Transpose of ECDF for centered fitted values
+                        and residuals from a linear model.
+do.formula.trellis.xysplom
+                        Interprets model formulas for xysplom and
+                        extended bwplots
+emptyMainLeftAxisLeftStripBottomLegend
+                        Remove main title, left axis tick labels, left
+                        strip, bottom legend from plot and keep the
+                        vertical spacing allocated to those items.
+export.eps              Exports a graph to an EPS file.
+glhtWithMCP.993         Retain averaging behavior that was previously
+                        available in glht.
+gof.calculation         Calculate Box-Ljung Goodness of Fit for ARIMA
+                        models in S-Plus.
+grid.yaxis.hh           make x- and y-axis labels
+hh                      Resolve filenames relative to the HH directory.
+hhpdf                   R tools for writing HH2: hhpdf, hhdev.off,
+                        hhcapture, hhcode, hhpng, hhlatex
+hov                     Homogeneity of Variance
+hovBF                   Homogeneity of Variance: Brown-Forsyth method
+hovPlot                 Homogeneity of Variance Plot
+if.R                    Conditional Execution for R or S-Plus
+interaction.positioned
+                        interaction method for positioned factors.
+interaction2wt          Plot all main effects and twoway interactions
+                        in a multifactor design
+interval                Prediction and Confidence Intervals for glm
+                        Objects
+intxplot                Interaction plot, with an option to print
+                        standard error bars.
+ladder                  Draw a "ladder of powers" plot, plotting each
+                        of several powers of y against the same powers
+                        of x.
+latticeresids           Subroutine used by residual.plots.lattice
+legendGrob2wt           place separate keys to the left of each row of
+                        a trellis
+likert                  Diverging stacked barcharts for Likert,
+                        semantic differential, rating scale data, and
+                        population pyramids.
+likertColor             Selection of colors for Likert plots.
+likertMosaic            Diverging stacked barcharts for Likert,
+                        semantic differential, rating scale data, and
+                        population pyramids based on mosaic as the
+                        plotting style.
+lm.regsubsets           Evaluate lm model with highest adjusted $R^2$.
+lmatPairwise            lmatPairwise
+lmatRows                Find the row numbers in the lmat corresponding
+                        to the focus factor.
+lmplot                  Four types of residual plots for linear models.
+logit                   Logistic and odds functions and their inverses.
+matrix.trellis          Convert a one-dimensional trellis object to a
+                        two-dimensional trellis object. This permits
+                        combineLimits and useOuterStrips to work.
+mcalinfct               MCA multiple comparisons analysis (pairwise)
+mmc                     MMC (Mean-mean Multiple Comparisons) plots.
+mmc.mean                MMC (Mean-mean Multiple Comparisons) plots from
+                        the sufficient statistics for a one-way design.
+mmcAspect               Control aspect ratio in MMC plots to maintain
+                        isomeans grid as a square.
+mmcPruneIsomeans        MMC plots in lattice-suppress isomeans grid
+                        lines for specified levels of the factor.
+mmcisomeans             Functions used by mmcplot.
+mmcplot                 MMC (Mean-mean Multiple Comparisons) plots in
+                        lattice.
+multicomp.order         Update a multicomp object by ordering its
+                        contrasts.
+multicomp.reverse       Force all comparisons in a "multicomp" object
+                        to have the same sign.
+norm.curve              plot a normal or a t-curve with both x and z
+                        axes.
+normalApproxBinomial    Plots to illustrate Normal Approximation to the
+                        Binomial-hypothesis tests or confidence
+                        intervals.
+npar.arma               Count the number of parameters in an ARIMA
+                        model specification.
+objip                   loop through all attached directories looking
+                        for pattern, possibly restricting to specified
+                        class or mode.
+orthog.complete         Construct an orthogonal matrix which is an
+                        arbitrary completion of the column space of the
+                        input set of columns.
+panel.acf               Panel functions for tsdiagplot.
+panel.axis.right        Right-justify right-axis tick labels.
+panel.bwplot.intermediate.hh
+                        Panel functions for bwplot.
+panel.bwplot.superpose
+                        Panel function for bwplot that displays an
+                        entire box in the colors coded by groups.
+panel.bwplott           Extension to S-Plus trellis to allow transposed
+                        plots.
+panel.cartesian         trellis panel function, with labeled rows and
+                        columns and without strip labels.
+panel.ci.plot           Default Panel Function for ci.plot
+panel.confintMMC        Confidence interval panel for MMC tiebreaker
+                        plots, or confidence interval plot.
+panel.dotplot.tb        Dotplot with evenly spaced tiebreakers.
+panel.interaction2wt    Plot all main effects and twoway interactions
+                        in a multifactor design
+panel.isomeans          isomeans grid for MMC plots.
+panel.likert            Panel functions for likert that include a
+                        stackWidth argument
+panel.pairs.hh          Function based on S-Plus panel.pairs to add the
+                        subpanel.scales and panel.cex arguments.
+panel.xysplom           panel method for xysplom.
+partial.corr            partial correlations
+pdiscunif               Discrete Uniform Distribution
+perspPlane              Helper functions for regr2.plot
+plot.mmc.multicomp      MMC (Mean-mean Multiple Comparisons) plot.
+plot.multicomp          Multiple comparisons plot that gives
+                        independent user control over the appearance of
+                        the significant and not significant
+                        comparisons.
+position                Find or assign the implied position for
+                        graphing the levels of a factor.  A new class
+                        "positioned", which inherits from "ordered" and
+                        "factor", is defined.
+positioned-class        Class "positioned", extends "ordered" to
+                        specify the position for graphing the levels of
+                        a factor.
+print.NormalAndTplot    Print method for Normal and t plots from
+                        NTplot.
+print.TwoTrellisColumns5
+                        Print two conformable trellis plots in adjacent
+                        columns with user control of widths.
+print.latticeresids     Print a 'latticeresids' object.
+print.tsdiagplot        Print a "tsdiagplot" object.
+push.vp.hh              push and pop a grid viewport, turn clipping
+                        off, change scale.
+pyramidLikert           Print a Likert plot as a Population Triangle
+rbind.trellis           Extend matrix reshaping functions to trellis
+                        objects.
+regr1.plot              plot x and y, with optional straight line fit
+                        and display of squared residuals
+regr2.plot              3D plot of z against x and y, with regression
+                        plane fit and display of squared residuals.
+regrresidplot           Draw a plot of y vs x from a linear model
+                        object, with residuals indicated by lines or
+                        squares.
+resid.squares           plot squared residuals in inches to match the
+                        y-dimension
+residVSfitted           Draw plots of resid ~ y.hat and
+                        sqrt(abs(resid)) ~ y.hat
+residual.plots          Residual plots for a linear model.
+residual.plots.lattice
+                        Construct four sets of regression plots: Y
+                        against X, residuals against X, partial
+                        residuals against X, partial residuals against
+                        each X adjusted for all the other X columns.
+seqplot                 Time series plot.
+seqplotForecast         seqplot with confidence bands for the forecast
+                        region.
+strip.background0       Turn off the coloring in the trellis strip
+                        labels.  Color 0 is the background color.
+strip.xysplom           strip function that is able to place the
+                        correlation or regression coefficient into the
+                        strip label.
+sufficient              Calculates the mean, standard deviation, and
+                        number of observations in each group of a
+                        data.frame that has one continuous variable and
+                        two factors.
+summary.arma.loop       summary and print and subscript methods for
+                        tsdiagplot and related objects.
+tsacfplots              Coordinated time series and ACF and PCF plots.
+tsdiagplot              Times series diagnostic plots for a structured
+                        set of ARIMA models.
+useOuterStripsT2L1      Three-factor generalization of
+                        latticeExtra::useOuterStrips
+vif                     Calculate the Variance Inflation Factor
+xysplom                 scatterplot matrix with potentially different
+                        sets of variables on the rows and columns.

@@ -1,0 +1,525 @@
+## # Export all names
+## exportPattern(".")
+
+##> matrix(ls(2, all=TRUE))
+## hand investigated and then sorted
+
+## mmc.explain is an unexported function that is used in the Multiple
+## Comparisons chapter of HH to explain the MMC plot
+
+## .__C__ancova
+## .__T__$:base
+## .__T__$<-:base
+## .__T__[:base
+## .arima.info.names.not.ordered
+## .Depends
+## .S3MethodsClasses
+## ResizeEtcLikert
+## axis.RightAdjustRight
+## emptyLegend
+## emptyLeftAxisLeftStrip
+## emptyMainLeftAxisLeftStripBottomLegend
+## getLikertData
+## getVarNames
+## leftLabels.trellis
+## rightLabels.trellis
+## panelOnly.trellis
+## mainSubLegend.trellis
+## mcp2matrix.993
+## emptyRightAxis
+## case.lm
+## coefArimaHH
+## glht.mcp
+## mcp2matrix2
+## panel.ae.dotplot
+## panel.ae.leftplot
+## panel.ae.rightplot
+## panel.axis.right
+## panel.bwplott
+## panel.case
+## panel.ci.plot
+## panel.gof
+## panel.interaction2wt
+## panel.pairs.hh
+## panel.std.resid
+## plot.case
+## plot.likert.formula.old
+## plot.multicomp.hh.adjusted
+## pop.vp.hh
+## PositiveOrder
+## print1.tsdiagplot
+## print2.tsdiagplot
+## push.vp.hh
+## rev.likert
+## strip.interaction2wt
+## strip.xysplom
+## yscale.components.right.HH.list.of.panels
+## Base
+## Curve
+## Area
+## Border
+## Vertical
+## AxisNormal
+## Main
+## Float
+## MainSimpler
+## ColorWithAlpha
+## NTplotTable
+export(
+AEdotplot,
+AElogrelrisk,
+AEmatchSortorder,
+ColorSet,
+F.curve,
+F.observed,
+F.setup,
+GSremove,
+LikertPercentCountColumns,
+ResizeEtc,
+X.residuals,
+acf.pacf.plot,
+acfplot,
+ae.dotplot,
+ae.dotplot.long,
+aeReshapeToLong,
+aicsigplot,
+ancova,
+ancovaplot,
+anovaMean,
+antilogit,
+antiodds,
+aov.ancovaplot,  ## aov is not generic
+aovStatement,
+aovStatementAndAnova,
+aovSufficient,
+arima.diag.hh,
+arima.model,
+arma.loop,
+## as.bin,
+as.MatrixList,
+as.glht,
+## as.hex,
+as.likert,
+as.likertDataFrame,
+as.listOfNamedMatrices,
+## as.mpfr.bin,
+## as.mpfr.binshift,
+## as.mpfr.hex,
+as.multicomp,
+as.position,
+as.positioned,
+as.pyramidLikert,
+as.rts,
+## as.TwoTrellisColumns,
+as.TwoTrellisColumns5,
+axis.i2wt,
+bivariateNormal,
+brewer.pal.likert,
+case,
+chisq.curve,
+chisq.observed,
+chisq.setup,
+ci.plot,
+CIplot,
+col.hh,
+combineLimits.trellisvector,
+## combineTwoTrellisColumns,
+cp.calc,
+cplx,
+dchisq.intermediate,
+ddiscunif,
+df.intermediate,
+diagplot5new,
+diagQQ,
+diag.arma.loop,
+diag.maybe.null,
+do.formula.trellis.xysplom,
+export.eps,
+## formatBin,  ## now uses version in Rmpfr (>= 0.6.0)
+## formatDec,
+## formatHex,
+glhtWithMCP.993,
+gof.calculation,
+gofplot,
+grid.xaxis.hh,
+grid.yaxis.hh,
+hh,
+hh.file,
+hh.file.DOS,
+hhlatex,
+hhpdf,
+hhpng,
+hhdev.off,
+hhcapture,
+hhcode,
+## HHscriptname,
+HHscriptnames,
+hov,
+hov.bf,
+hovPlot,
+hovPlot.bf,
+hovBF,
+hovplotBF,
+if.R,
+interaction2wt,
+interaction.positioned,
+interval,
+intxplot,
+is.likert,
+is.likertCapable,
+is.listOfNamedMatrices,
+is.positioned,
+ladder,
+ladder.f,
+ladder.fstar,
+ladder3,
+latticeresids,
+legendGrob2wt,
+likert,
+likertplot,
+likertColor,
+likertColorBrewer,
+likertMosaic,
+lm.regsubsets,
+lmatContrast,
+lmatPairwise,
+lmatRows,
+lmplot,
+logit,
+logrelrisk,
+make.xaxis.hh.labels,
+make.yaxis.hh.labels,
+matrix.trellis,
+mcalinfct,
+mmc,
+mmcplot,
+mmcPruneIsomeans,
+multicomp.label.change,
+multicomp.mean,
+multicomp.mmc,
+multicomp.mmc.mean,
+multicomp.order,
+multicomp.reverse,
+norm.curve,
+norm.observed,
+norm.outline,
+norm.setup,
+normal.and.t.dist,
+NTplot,
+## NormalAndTplot,
+## NormalAndTAndPower,
+## NormalAndTPower,
+## normalApproxBinomial,
+npar.arma,
+npar.rarma,
+npar.sarma,
+objip,
+odds,
+OddsRatio,
+OneWayVarPlot,
+orthog.complete,
+orthog.construct,
+panel.acf,
+panel.ancova,
+panel.ancova.superpose,
+panel.barchart2,
+panel.bwplot.intermediate.hh,
+panel.bwplot.superpose,
+panel.bwplot.groups,
+panel.cartesian,
+panel.dotplot.tb,
+panel.hov,
+panel.intxplot,
+panel.likert,
+panel.residSquare,
+panel.xysplom,
+partial.corr,
+pchisq.intermediate,
+pdiscunif,
+perspBack.wall.x,
+perspBack.wall.y,
+perspFloor,
+perspPlane,
+## persp.setup,
+pf.intermediate,
+plot.likert,
+plotMatchMMC,
+plotOddsRatio,
+plotOddsRatio.base,
+position,
+"position<-",
+positioned,
+powerplot,
+qchisq.intermediate,
+qdiscunif,
+qf.intermediate,
+rdiscunif,
+rearrange.diag.arma.loop,
+regrresidplot,
+regr1.plot,
+regr2.plot,
+resid.squares,
+residplot,
+residual.plots,
+residual.plots.lattice,
+residVSfitted,
+scaleLocation,
+## scanBin,  ## now uses version in Rmpfr (>= 0.6.0)
+## scanHex,
+seqplot,
+seqplotForecast,
+## shiny.NTplotplot,
+shiny.CIplot,
+strip.background0,
+strip.ladder,
+sufficient,
+summaryHH,
+title.grob,
+title.trellis,
+transpose,
+tsacfplots,
+tsdiagplot,
+unpositioned,
+useOuterStripsT2L1,
+vcovSufficient,
+vif,
+WindowsPath,
+xysplom,
+xscale.components.top.HH,
+yscale.components.right.HH
+)
+
+## units.ts is something needed for compatability between R and S-Plus
+
+
+## register all the methods for generics elsewhere in case namespace is
+## loaded but not currently attached.
+S3method("AEdotplot", data.frame)
+S3method("AEdotplot", AElogrelrisk)
+S3method("AEdotplot", AEtable)
+S3method("AEdotplot", formula)
+S3method("print", AEdotplot)
+S3method("c", AEdotplot)
+S3method("[", arma.loop)
+S3method("[", cp.object)
+S3method("[", diag.arma.loop)
+S3method("[", listOfNamedMatrices)
+S3method("[", mmc.multicomp)
+S3method("[", positioned)
+S3method(X.residuals, default)
+S3method(X.residuals, formula)
+S3method(X.residuals, lm)
+S3method(anova, ancova)
+S3method(anova, ancovaplot)
+S3method(ancovaplot, formula)
+S3method(aperm, trellis)
+## S3method(aov, ancovaplot)  ## aov is not generic
+S3method(aovStatement, ancovaplot)
+S3method(aovStatementAndAnova, ancovaplot)
+S3method(as.MatrixList, array)
+S3method(as.character, arima.model)
+S3method(as.matrix, trellis)
+S3method(as.data.frame, listOfNamedMatrices)
+S3method(as.glht, multicomp)
+S3method(as.likert, data.frame)
+S3method(as.likert, formula)
+S3method(as.likert, ftable)
+S3method(as.likert, matrix)
+S3method(as.likert, array)
+S3method(as.likert, default)
+S3method(as.likert, table)
+S3method(as.likert, listOfNamedMatrices)
+S3method(as.likertDataFrame, array)
+S3method(as.likertDataFrame, matrix)
+S3method(as.likertDataFrame, data.frame)
+S3method(as.likertDataFrame, listOfNamedMatrices)
+S3method(as.listOfNamedMatrices, data.frame)
+S3method(as.listOfNamedMatrices, matrix)
+S3method(as.listOfNamedMatrices, MatrixList)
+S3method(as.listOfNamedMatrices, array)
+S3method(as.listOfNamedMatrices, list)
+## S3method(as.matrix, hex)
+## S3method(as.matrix, bin)
+S3method(as.matrix, listOfNamedMatrices)
+## S3method(as.mpfr, bin)
+## S3method(as.mpfr, binshift)
+## S3method(as.mpfr, hex)
+S3method(as.multicomp, glht)
+## S3method(as.numeric, bin)
+## S3method(as.numeric, binshift)
+## S3method(as.numeric, hex)
+S3method(as.numeric, positioned)
+S3method(as.vector, trellis)
+S3method(case, lm)
+S3method(cbind, trellis)
+S3method(ci.plot, lm)
+## S3method(combineLimits, trellisvector) ## not generic
+S3method(coef, ancova)
+S3method(mmc, default)
+S3method(mmc, glht)
+S3method(interval, glm)
+S3method(interaction2wt, default)
+S3method(interaction2wt, formula)
+S3method(is.na, positioned)
+S3method(is.numeric, positioned)
+S3method(likertMosaic, array)
+S3method(likertMosaic, data.frame)
+S3method(likertMosaic, default)
+S3method(likertMosaic, formula)
+S3method(likertMosaic, list)
+S3method(likertMosaic, matrix)
+S3method(lmatPairwise, matrix)
+S3method(lmatPairwise, glht)
+S3method(lmatPairwise, mmc.multicomp)
+S3method(lmatPairwise, mmc)
+S3method(lmatRows, glht)
+S3method(lmatRows, lm)
+S3method(lmatRows, mmc.multicomp)
+S3method(lmatRows, multicomp)
+## S3method(matrix, trellis)  ## not generic
+S3method(model.frame, ancova)
+S3method(mmcplot, mmc)
+S3method(mmcplot, glht)
+S3method(mmcplot, mmc.multicomp)
+S3method(mmcplot, multicomp)
+S3method(mmcplot, default)
+S3method(model.tables, ancovaplot)
+S3method(multicomp.label.change, mmc.multicomp)
+S3method(multicomp.label.change, multicomp)
+S3method(NormalAndTplot, default)
+S3method(NormalAndTplot, htest)
+S3method(NTplot, default)
+S3method(NTplot, htest)
+S3method(NTplot, power.htest)
+S3method(NTplot, NormalAndTplot)
+S3method(plot, ancova)
+S3method(plot, case)
+S3method(plot, mmc.multicomp)
+S3method(plot, multicomp)
+S3method(plot, multicomp.hh)
+S3method(plot, summaryHH.regsubsets)
+S3method(plot, likert)
+S3method(plot.likert, array)
+S3method(plot.likert, data.frame)
+S3method(plot.likert, default)
+S3method(plot.likert, formula)
+S3method(plot.likert, ftable)
+S3method(plot.likert, list)
+S3method(plot.likert, likert) ## for "likert" objects constructed with the likert package
+## S3method(plot.likert, numeric)
+S3method(plot.likert, structable)
+S3method(plot.likert, table)
+S3method(powerplot, NormalAndTplot)
+S3method(predict, ancova)
+S3method(print, MatrixList)
+S3method(print, ancova)
+S3method(print, arma.loop)
+S3method(print, arma.loop.list)
+S3method(print, cp.object)
+## S3method(print, glht.mmc.multicomp)
+## S3method(print, bin)
+## S3method(print, hex)
+S3method(print, latticeresids)
+S3method(print, listOfNamedMatrices)
+S3method(print, lm.case.large)
+S3method(print, mmc.multicomp)
+S3method(print, multicomp)
+S3method(print, multicomp.hh)
+S3method(print, NormalAndTplot)
+S3method(print, positioned)
+S3method(print, pyramidLikert)
+## S3method(print, TwoTrellisColumns)
+S3method(print, TwoTrellisColumns5)
+S3method(print, summaryHH.regsubsets)
+S3method(print, tsacfplots)
+S3method(print, tsdiagplot)
+S3method(print, lm.case.large)
+S3method(print, trellis.case)
+S3method(rbind, trellis)
+S3method(reorder, trellis)
+S3method(rev, likert)
+S3method(seqplot, default)
+## S3method(seqplot, rts)
+S3method(seqplot, ts)
+S3method(shiny.NormalAndTplot, default)
+S3method(shiny.NormalAndTplot, htest)
+S3method(shiny.NormalAndTplot, NormalAndTplot)
+S3method(summary, ancova)
+S3method(summary, arma.loop)
+S3method(summary, arma.loop.list)
+S3method(summaryHH, regsubsets)
+S3method(transpose, default)
+S3method(transpose, trellis)
+S3method(unique, positioned)
+S3method(update, AEdotplot)
+S3method(vif, default)
+S3method(vif, formula)
+S3method(vif, lm)
+S3method(xysplom, default)
+S3method(xysplom, formula)
+
+
+## # Import all packages listed as Imports or Depends
+## import(
+##   lattice,
+##   stats,
+##   grid,
+##   multcomp,
+##   mvtnorm,
+##   methods,
+##   leaps,
+##   RColorBrewer,
+##   latticeExtra
+## )
+
+## import(matrixTrellis)  ## is this needed?
+
+importFrom("stats", "Box.test", "acf", "aggregate", "anova", "aov",
+             "as.formula", "as.ts", "coef", "confint", "contr.treatment",
+             "contrasts", "cor", "cycle", "dchisq", "df", "dnorm", "dt",
+             "family", "fitted", "formula", "frequency", "hat", "lm",
+             "lm.influence", "lsfit", "median", "model.frame",
+             "model.matrix", "model.tables", "na.exclude", "na.pass", "pacf", "pchisq",
+             "pf", "pnorm", "ppoints", "predict", "pt", "qchisq", "qf",
+             "qnorm", "qt", "quantile", "reorder", "resid", "residuals", "rnorm", "sd",
+             "summary.lm", "t.test", "terms", "time", "ts", "tsp", "update", "var")
+
+importFrom(reshape2, melt, acast, dcast)
+
+importFrom(leaps, regsubsets)
+
+importFrom(vcd, mosaic, is.structable, spacing_highlighting)
+importFrom(colorspace, diverge_hcl, sequential_hcl)
+
+importFrom(multcomp, glht, contrMat, mcp)
+
+## importFrom(Rcmdr, doItAndPrint)
+
+import(lattice, latticeExtra, grid, gridExtra, graphics)
+
+import(shiny)
+
+importFrom(Hmisc, latex)
+
+importFrom(abind, abind)
+
+importFrom(Rmpfr, mpfr, getPrec)
+
+importFrom("grDevices", "col2rgb", "colorRampPalette", "dev.copy2eps",
+             "heat.colors", "rgb", "trans3d")
+
+importFrom("methods", "is")
+importFrom("utils", "ls.str")
+
+
+## R/workarounds.R
+## Unexported objects imported by ':::' calls:
+##   'grid:::make.xaxis.major' 'grid:::make.xaxis.ticks'
+##   'grid:::make.yaxis.major' 'grid:::make.yaxis.ticks'
+##   'lattice:::chooseFace' 'lattice:::extend.limits'
+##   'lattice:::hist.constructor' 'lattice:::lattice.getStatus'
+##   'lattice:::lattice.setStatus' 'lattice:::t.trellis'
+##   'multcomp:::meanslinfct'
+##   See the note in ?`:::` about the use of this operator.
+## See the information on DESCRIPTION files in the chapter 'Creating R
+## packages' of the 'Writing R Extensions' manual.

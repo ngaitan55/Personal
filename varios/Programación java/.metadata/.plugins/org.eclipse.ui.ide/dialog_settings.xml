@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\original_chingaza"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\Ejercicio 3\m3_cupiMigraciones"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\m4_chingaza"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\m4_SistemaPacientes"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\m3_cadenasAdn"/>
+			<item value="C:\Users\Usuario\Downloads\parcial3_ng.gaitan"/>
+			<item value="C:\Users\Usuario\Desktop\Parcial 3\parcial3_ng.gaitan"/>
+			<item value="C:\Users\Usuario\Desktop\Parcial 3\M3_ejercicio3_nggaitan"/>
+			<item value="C:\Users\Usuario\Desktop\M3_ejercicio3_nggaitan"/>
+			<item value="C:\Users\Usuario\Desktop\m3_cupiMigraciones"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\M3L4_nggaitan\m3_censoOso"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\M3L4_nggaitan"/>
+			<item value="C:\Users\Usuario\Downloads\M3L4_nggaitan"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\m3_censo"/>
+			<item value="C:\Users\Usuario\Downloads\M3L2_nggaitan"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\M3L1_nggaitan"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\n3_contactos_Lab1"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\Ejercicio 2\m2_controlDeCalidad"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\m2_nggaitan_l2_(incompleto)"/>
+			<item value="C:\Users\Usuario\Desktop\Programación DCB\Ejercicio 1\m1_cupiExperimentos_esqueleto"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1580795777683" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="1920" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="1040" key="DIALOG_HEIGHT"/>
+		<item value="8" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

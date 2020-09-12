@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/n3_listaDeContactos/source/uniandes/cupi2/listaContactos/interfaz/InterfazListaDeContactos.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="uniandes.cupi2.listaContactos.interfaz.InterfazListaDeContactos"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="n3_listaDeContactos"/>
+</launchConfiguration>

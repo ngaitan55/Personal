@@ -1,0 +1,58 @@
+package interfaz;
+
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class PanelPuntajes extends JPanel
+{
+	
+	//Atributos
+	
+	/**
+	 * Campo para ingresar puntaje match
+	 */
+	private JTextField txtPuntajeMatch;
+	/**
+	 * Campo para ingresar puntaje Mismatch
+	 */
+	private JTextField txtPuntajeMismatch;
+	/**
+	 * Campo para ingresar puntaje gap
+	 */
+	private JTextField txtPuntajeGap;
+	/**
+	 * Indica el puntaje match
+	 */
+	private JLabel labPuntajeMatch;
+	/**
+	 * Indica el puntaje Mismatch
+	 */
+	private JLabel labPuntajeMismatch;
+	/**
+	 * Indica el puntaje Gap
+	 */
+	private JLabel labPuntajeGap;
+	
+	//Constructor
+	public PanelPuntajes()
+	{
+		setLayout( new GridLayout( 6, 2,10,20 ) );
+		//Puntaje Match, label y textField
+		labPuntajeMatch = new JLabel("Puntaje match");
+		labPuntajeMatch.setVisible(true);
+		add(labPuntajeMatch);
+		
+		txtPuntajeMatch = new JTextField();
+		txtPuntajeMatch.setVisible(true);
+		txtPuntajeMatch.setEditable(true);
+		add(txtPuntajeMatch);
+	}
+	
+	
+	
+	//Métodos
+}

@@ -1,0 +1,358 @@
+package mundo;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.PrintStream;
+import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+
+
+
+public class Alineamiento {
+	
+	//Atributos
+	
+	/**
+	 * Número de filas de la matriz de alineamiento
+	 * <pre> filas > 0 <pre/>
+	 */
+	private int filas;
+	
+	/**
+	 * Número de columnas de la matriz de alineamiento
+	 * <pre> columnas > 0 <pre/>
+	 */
+	private int columnas;
+	
+	/**
+	 * Representa el puntaje asignado a un match entre dos nucleótidos
+	 */
+	private int puntajeMatch;
+	
+	/**
+	 * Representa el puntaje asignado a un Mismatch entre dos nucleótidos
+	 */
+	private int puntajeMismatch;
+	
+	/**
+	 * Representa el puntaje asignado a un Gap entre dos nucleótidos
+	 */
+	private int puntajeGap;
+	
+	/**
+	 * Primera secuencia
+	 */
+	private Secuencia secuencia1;
+	
+	/**
+	 * Segunda secuencia
+	 */
+	private Secuencia secuencia2;
+	
+	/**
+	 * Matriz de puntajes del alineamiento
+	 */
+	private int[][] matrizPuntajes;
+	
+	//Constructor
+	public Alineamiento()
+	{
+		filas = 0;
+		columnas = 0;
+		puntajeMatch = 0;
+		puntajeMismatch = 0;
+		puntajeGap = 0;
+		matrizPuntajes = null;
+		secuencia1 = null;
+		secuencia2 = null;
+		
+	}
+	
+	//Métodos
+	
+	/**
+	 * Permite modificar el puntajeMatch
+	 * @param pMatch
+	 */
+	public void modificarPuntajeMatch(int pMatch)
+	{
+		puntajeMatch = pMatch;
+	}
+	
+	/**
+	 * Permite modificar el puntaje mismatch
+	 * @param pMismatch
+	 */
+	public void modificarPuntajeMismatch(int pMismatch)
+	{
+		puntajeMismatch = pMismatch;
+	}
+	
+	/**
+	 * Permite modificar el puntaje gap
+	 * @param pGap
+	 */
+	public void modificarPuntajeGap(int pGap)
+	{
+		puntajeGap = pGap;
+	}
+	
+	
+	/**
+	 * Permite cargar el archivo y construir las secuencias a alinear
+	 */
+	public void leerArchivo(File pArchivo) throws Exception
+	{
+		FileReader reader = new FileReader(pArchivo);
+		BufferedReader lector = new BufferedReader(reader);
+		String linea = lector.readLine();
+		String secuencia = "";
+		String descripcion1 = "";
+		String descripcion2 = "";
+		while(linea!=null){
+			boolean esDescripcion = linea.indexOf('>')!= -1;
+			if(esDescripcion){
+				descripcion1 = linea;
+			}else{
+				while(!esDescripcion && linea != null){
+					secuencia = secuencia + linea;
+					linea = lector.readLine();
+					if(linea!=null){
+						esDescripcion = linea.indexOf('>')!= -1;
+					}
+				}
+				if(linea!=null){descripcion2 = linea;}
+				if(secuencia1 == null){
+					secuencia1 = new Secuencia(descripcion1, secuencia);
+					secuencia = "";
+				}else{
+					secuencia2 = new Secuencia(descripcion2, secuencia);
+				}
+			}
+			linea = lector.readLine();
+			
+		}
+		lector.close();
+		
+	}
+	
+	/**
+	 * Permite modificar el puntaje match
+	 * @param pMatch
+	 */
+	public void modificarMatch(int pMatch)
+	{
+		puntajeMatch = pMatch;
+	}
+	
+	/**
+	 * Permite modificar el puntaje Mismatch 
+	 * @param pMismatch
+	 */
+	public void modificarMismatch(int pMismatch)
+	{
+		puntajeMismatch = pMismatch;
+	}
+	
+	/**
+	 * Permite modificar el puntaje Gap 
+	 * @param pGap
+	 */
+	public void modificarGap(int pGap)
+	{
+		puntajeGap = pGap;
+	}
+	
+	/**
+	 * Método que permite calcular los puntajes de alineamiento en la matriz de alineamientos
+	 */
+	public void calcularPuntajes()
+	{
+		
+		filas = secuencia1.darLongitudSecuencia() + 1;
+		columnas = secuencia2.darLongitudSecuencia() + 1;
+		matrizPuntajes = new int[filas][columnas];
+		matrizPuntajes[0][0] = 0;
+		String secuenciaPares1 = secuencia1.darSecuenciaBases();
+		String secuenciaPares2 = secuencia2.darSecuenciaBases();
+		for(int i = 1; i < filas; i +=1){
+			int puntajePrevio = matrizPuntajes[i-1][0];
+			matrizPuntajes[i][0] = puntajePrevio + puntajeGap;
+		}
+		for(int j = 1; j < columnas; j += 1){
+			int puntajePrevio = matrizPuntajes[0][j-1];
+			matrizPuntajes[0][j] = puntajePrevio + puntajeGap;
+		}
+		for(int i = 1; i < filas; i += 1){
+			for(int j = 1; j < columnas; j += 1){
+				char base1 = secuenciaPares1.charAt(i-1);
+				char base2 = secuenciaPares2.charAt(j-1);
+				int puntajeMatchMismatch = 0;
+				if(base1 == base2){
+					puntajeMatchMismatch = matrizPuntajes[i-1][j-1] + puntajeMatch;
+				}else{
+					puntajeMatchMismatch = matrizPuntajes[i-1][j-1] + puntajeMismatch;
+				}
+				int gapEnSecuencia1 = matrizPuntajes[i][j-1] + puntajeGap;
+				int gapEnSecuencia2 = matrizPuntajes[i-1][j] + puntajeGap;
+				if(puntajeMatchMismatch >= gapEnSecuencia1 && puntajeMatchMismatch >= gapEnSecuencia2){
+					matrizPuntajes[i][j] = puntajeMatchMismatch;
+				}else if(gapEnSecuencia1 >= gapEnSecuencia2){
+					matrizPuntajes[i][j] = gapEnSecuencia1;
+				}else{
+					matrizPuntajes[i][j] = gapEnSecuencia2;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Método que, a partir del cálculo de alineamientos, permite proveer el mejor alineamiento
+	 * @return La secuencia con el mejor alineamiento
+	 */
+	public String darMejorAlineamiento()
+	{
+		String mejorSecuencia1 = "";
+		String mejorSecuencia2 = "";
+		String mejorAlineamiento = "";
+		calcularPuntajes();
+		int i = matrizPuntajes.length-1;
+		int j = matrizPuntajes[i].length-1;
+		char base1 = 0;
+		char base2 = 0;
+		int casillaEvaluada = 0;
+		int casillaDiagonal = 0;
+		int casillaSuperior = 0;
+		int casillaIzquierda = 0;
+		boolean matchDiagonal;
+		boolean mismatchDiagonal;
+		boolean gapSuperior;
+		boolean gapIzquierda;
+		while(i > 0 || j > 0){
+			if(i > 0){
+				base1 = secuencia1.darSecuenciaBases().charAt(i-1);
+				casillaSuperior = matrizPuntajes[i-1][j];
+			}
+		    if(j > 0){
+		    	base2 = secuencia2.darSecuenciaBases().charAt(j-1);
+		    	casillaIzquierda = matrizPuntajes[i][j-1];
+		    }if(i>0 && j>0){
+		    	casillaDiagonal = matrizPuntajes[i-1][j-1];
+		    }
+		    casillaEvaluada = matrizPuntajes[i][j];
+			matchDiagonal = casillaEvaluada == casillaDiagonal + puntajeMatch && base1 == base2 && i != 0 && j != 0;
+			mismatchDiagonal = casillaEvaluada == casillaDiagonal + puntajeMismatch && base1!=base2 && i != 0 && j != 0;
+			gapSuperior = casillaEvaluada == casillaSuperior + puntajeGap && i != 0;
+			gapIzquierda = casillaEvaluada == casillaIzquierda + puntajeGap && j!=0;
+			if(matchDiagonal){
+				mejorSecuencia1 += base1;
+				mejorSecuencia2 += base2;
+				i -= 1;
+				j -= 1;
+			}else if(mismatchDiagonal){
+				mejorSecuencia1 += base1;
+				mejorSecuencia2 += base2;
+				i -= 1;
+				j -= 1;
+			}else if(gapSuperior){
+				mejorSecuencia1 += base1;
+				mejorSecuencia2 += '-';
+				i-=1;
+			}else if(gapIzquierda){
+				mejorSecuencia1 += '-';
+				mejorSecuencia2 += base2;
+				j -= 1;
+			}
+		}
+		StringBuilder builder1 = new StringBuilder(mejorSecuencia1).reverse();
+		StringBuilder builder2 = new StringBuilder(mejorSecuencia2).reverse();
+		mejorSecuencia1 = builder1.toString();
+		mejorSecuencia2 = builder2.toString();
+		mejorAlineamiento = mejorSecuencia1 + "," + mejorSecuencia2;
+		return mejorAlineamiento;
+	}
+	
+	/**
+	 * Retorna la matriz de puntajes de alineamiento
+	 * @return matrizPuntajes
+	 */
+	public int[][] darMatrizPuntajes()
+	{
+		return matrizPuntajes;
+	}
+	
+	/**
+	 * Permite guardar la secuencia con el mejor alineamiento
+	 */
+	public void guardarMejorAlineamiento() throws Exception
+	{
+		calcularPuntajes();
+		String[] alineamiento = darMejorAlineamiento().split(",");
+		try(PrintStream escritor = new PrintStream("data/alineamiento.txt");){
+			escritor.println("El mejor alineamiento para sus secuencias es:");
+			escritor.println(alineamiento[0]);
+			escritor.println(alineamiento[1]);
+		}
+		
+		
+	}
+	
+	/**
+	 * Provee la secuencia 1
+	 */
+	public Secuencia darSecuencia1()
+	{
+		return secuencia1;
+	}
+	
+	/**
+	 * Provee la secuencia 2
+	 */
+	public Secuencia darSecuencia2()
+	{
+		return secuencia2;
+	}
+	
+	/**
+	 * Método extensión 1
+	 */
+	public String metodo1()
+	{
+		String respuesta= "";
+		return respuesta;
+	}
+	
+	/**
+	 * Método extensión 2
+	 */
+	public String metodo2()
+	{
+		String respuesta = "";
+		return respuesta;
+	}
+	
+	/**
+	 * Permite hacer test del mundo del programa
+	 */
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(System.in);
+		int pMatch = scanner.nextInt();
+		int pMismatch = scanner.nextInt();
+		int pGap = scanner.nextInt();
+		File pArchivo = new File("data/prueba.txt");
+		Alineamiento testAlineamientos = new Alineamiento();
+		try{
+			testAlineamientos.leerArchivo(pArchivo);
+		}catch(Exception e){
+			System.out.print("Papi, otra vez no se pudo xd ");
+		}
+		String alineamientoTest = testAlineamientos.darMejorAlineamiento();
+		System.out.println(testAlineamientos.secuencia1.darDescripcion());
+		System.out.println(alineamientoTest);
+		System.out.println(testAlineamientos.secuencia2.darDescripcion());
+	}
+
+}

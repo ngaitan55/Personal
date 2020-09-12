@@ -1,0 +1,112 @@
+package interfaz;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+
+public class PanelPuntajes extends JPanel
+{
+	
+	//Atributos
+	
+	/**
+	 * Campo para ingresar puntaje match
+	 */
+	private JTextField txtPuntajeMatch;
+	/**
+	 * Campo para ingresar puntaje Mismatch
+	 */
+	private JTextField txtPuntajeMismatch;
+	/**
+	 * Campo para ingresar puntaje gap
+	 */
+	private JTextField txtPuntajeGap;
+	/**
+	 * Indica el puntaje match
+	 */
+	private JLabel labPuntajeMatch;
+	/**
+	 * Indica el puntaje Mismatch
+	 */
+	private JLabel labPuntajeMismatch;
+	/**
+	 * Indica el puntaje Gap
+	 */
+	private JLabel labPuntajeGap;
+	
+	//Constructor
+	public PanelPuntajes()
+	{
+		setLayout( new GridLayout( 1, 3) );
+		TitledBorder border = new TitledBorder("Puntajes");
+		setBorder(border);
+		//Puntaje Match, label y textField
+		labPuntajeMatch = new JLabel("Puntaje match");
+		labPuntajeMatch.setVisible(true);
+		add(labPuntajeMatch);
+		txtPuntajeMatch = new JTextField("2");
+		txtPuntajeMatch.setVisible(true);
+		txtPuntajeMatch.setEditable(true);
+		add(txtPuntajeMatch);
+		
+		//Puntaje Mismatch, label y textField
+		labPuntajeMismatch = new JLabel("Puntaje mismatch");
+		labPuntajeMismatch.setVisible(true);
+		add(labPuntajeMismatch);
+		txtPuntajeMismatch = new JTextField("-1");
+		txtPuntajeMismatch.setVisible(true);
+		add(txtPuntajeMismatch);
+		
+		//Puntaje Gap, label y textField
+		labPuntajeGap = new JLabel("Puntaje gap");
+		labPuntajeGap.setVisible(true);
+		add(labPuntajeGap);
+		txtPuntajeGap = new JTextField("-2");
+		txtPuntajeGap.setVisible(true);
+		add(txtPuntajeGap);
+		
+	}
+	
+	
+	
+	//Métodos
+	
+	/**
+	 * Permite obtener el puntaje match ingresado por el usuario
+	 * @return puntajeMatch
+	 * @throws Exception No se introdujo texto o no se pudo convertir 
+	 */
+	public int darPuntajeMatchUI() throws Exception
+	{
+		String puntajeMatchTexto = txtPuntajeMatch.getText();
+		int puntajeMatch = Integer.parseInt(puntajeMatchTexto);
+		return puntajeMatch;
+	}
+	
+	/**
+	 * Permite obtener el puntaje Mismatch ingresado por el usuario
+	 * @return puntajeMismatch
+	 * @throws Exception No se introdujo texto o no se pudo convertir 
+	 */
+	public int darPuntajeMismatchUI() throws Exception
+	{
+		String puntajeMisMatchTexto = txtPuntajeMismatch.getText();
+		int puntajeMismatch = Integer.parseInt(puntajeMisMatchTexto);
+		return puntajeMismatch;
+	}
+	
+	/**
+	 * Permite obtener el puntaje Gap ingresado por el usuario
+	 * @return puntajeMismatch
+	 * @throws Exception No se introdujo texto o no se pudo convertir 
+	 */
+	public int darPuntajeGapUI() throws Exception
+	{
+		String puntajeGapTexto = txtPuntajeGap.getText();
+		int puntajeGap = Integer.parseInt(puntajeGapTexto);
+		return puntajeGap;
+	}
+}

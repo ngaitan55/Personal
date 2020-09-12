@@ -1,0 +1,34 @@
+package interfaz;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class PanelMatriz extends JPanel
+{
+	
+	//Atributos
+	
+	/**
+	 * Representa la matriz que se le muestra al usuario con los puntuajes
+	 */
+	private JLabel[][] matrizPuntajesVisual;
+	
+	/**
+	 * Atributo que representa la clase principal de la interfaz
+	 */
+	private InterfazPrincipalAlineamientos principal;
+	
+	//Constructores
+	
+	public PanelMatriz(InterfazPrincipalAlineamientos pPrincipal)
+	{
+		principal = pPrincipal;
+		
+		matrizPuntajesVisual = new JLabel[0][0];
+		
+	}
+	
+	
+	
+
+}

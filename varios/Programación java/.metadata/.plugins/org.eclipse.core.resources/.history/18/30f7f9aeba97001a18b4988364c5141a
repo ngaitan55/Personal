@@ -1,0 +1,24 @@
+package interfaz;
+
+import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class PanelImagen extends JPanel
+{
+
+	
+	//Constructor
+	/**
+	 * Constructor del panel de imagen 
+	 */
+	
+	public PanelImagen(){
+		
+		ImageIcon icono = new ImageIcon("data/imagen");
+		JLabel imagen = new JLabel(icono);
+		add(imagen, BorderLayout.CENTER);
+	}
+}
